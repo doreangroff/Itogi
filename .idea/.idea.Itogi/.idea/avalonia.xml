@@ -5,6 +5,8 @@
       <map>
         <entry key="Itogi/App.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Emp_infoWin.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/Windows/EmpsDir/EmployeeWin.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/Windows/InfoDir/Emp_infoWin.axaml" value="Itogi/Itogi.csproj" />
       </map>
     </option>
   </component>

@@ -19,4 +19,12 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2"/>
         <PackageReference Include="MySqlConnector" Version="2.3.1" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Windows\InfoDir\Emp_infoWin.axaml.cs">
+        <DependentUpon>Emp_infoWin.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

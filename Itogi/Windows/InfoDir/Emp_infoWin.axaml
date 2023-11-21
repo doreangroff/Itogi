@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Itogi.Emp_infoWin"
+        WindowStartupLocation="CenterScreen"
+        Width="1000"
+        Title="Информация о сотрудниках">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBox x:Name="searchInfo" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchInfo_OnTextChanged"></TextBox>
+            <Button x:Name="SortBtn" Content="Сортировка по сотрудникам" Click="SortBtn_OnClick" Background="White" BorderThickness="2" BorderBrush="Black"></Button>
+            
+        </StackPanel>
+        <DataGrid x:Name="InfoGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  Margin="7,20"
+                  Height="500"
+                  
+                  x:CompileBindings="False"><!--MinHeight="500"-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Сотрудник" Binding="{Binding Epmloyee}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Post}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Department}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ставка" Binding="{Binding Working_rate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Часы работы (в месяц)" Binding="{Binding Working_hours}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Зарабатная плата" Binding="{Binding Salary}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>  
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="EmployeesBtn" Content="Сотрудники" Click="EmployeesBtn_OnClick"></Button>
+            <TextBlock x:Name="x"></TextBlock>
+            <TextBlock x:Name="y"></TextBlock>
+        </StackPanel>
+    </StackPanel>
+     
+</Window>
