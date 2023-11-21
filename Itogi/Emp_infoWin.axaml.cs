@@ -12,7 +12,7 @@ public partial class Emp_infoWin : Window
     public Emp_infoWin()
     {
         InitializeComponent();
-        Info = new List<Emp_info>();
+        _info = new List<Emp_info>();
 
         _connectionSB = new MySqlConnectionStringBuilder
         {
@@ -43,10 +43,24 @@ public partial class Emp_infoWin : Window
                 {
                     while (reader.Read())
                     {
-                        _info.Add();
+                        _info.Add(new Emp_info()
+                        {
+                            Epmloyee = reader.GetString("fio"),
+                            Post = reader.GetString("post_name"),
+                            Department = reader.GetString("department_name"),
+                            Working_rate = reader.GetFloat("working_rate"),
+                            Working_hours = reader.GetInt32("working_hours"),
+                            Salary = reader.GetFloat("salary"),
+                            EpmloyeeID = reader.GetInt32("employee"),
+                            PostID = reader.GetInt32("post"),
+                            DepartmentID = reader.GetInt32("department")
+                        });
                     }
                 }
+                con.Close();
             }
         }
+
+        InfoGrid.ItemsSource = _info;
     }
 }

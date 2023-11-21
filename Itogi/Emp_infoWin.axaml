@@ -15,7 +15,7 @@
           MinHeight="200"
           x:CompileBindings="False">
     <DataGrid.Columns>
-        <DataGridTextColumn Header="Сотрудник" Binding="{Binding Employee}"></DataGridTextColumn>
+        <DataGridTextColumn Header="Сотрудник" Binding="{Binding Epmloyee}"></DataGridTextColumn>
         <DataGridTextColumn Header="Должность" Binding="{Binding Post}"></DataGridTextColumn>
         <DataGridTextColumn Header="Отдел" Binding="{Binding Department}"></DataGridTextColumn>
         <DataGridTextColumn Header="Ставка" Binding="{Binding Working_rate}"></DataGridTextColumn>
