@@ -3,38 +3,63 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 
 namespace Itogi.Windows.EmpsDir;
 
 public partial class EmployeeWin : Window
 {
     
-    private const double targetY = 140;
-    private const double moveStep = 40;
+    private const int targetY = 160;
+    private const int moveStep = 40;
     public EmployeeWin()
     {
         InitializeComponent();
-        //EmployeeWin emp = new EmployeeWin();
-        //emp.Opened += NewWindow_Opened;
+        StartLoopAsync();
+        //this.IsVisible = false;
 
-    }
-    
-    private async void NewWindow_Opened(object sender, EventArgs e)
-    {
-        await StartLoopAsync();
     }
     
     private async Task StartLoopAsync()
     {
-        double currentX = this.Position.X;
-        double currentY = this.Position.Y;
-        while (currentY < targetY)
+        await Task.Run(async () =>
         {
-            MoveWindow(currentX, currentY + moveStep);
-            currentY += moveStep;
-            await Task.Delay(40);
-        }
+            double currentX = this.Position.X;
+            int currentY = this.Position.Y;
+            Console.WriteLine(currentX);
+            Console.WriteLine(currentY);
+            Dispatcher.UIThread.Post(() =>
+            {
+                Position = new PixelPoint(Position.X, 0);
+            });
 
+            while (currentY > -1000)
+            {
+                Console.WriteLine(currentX);
+                Console.WriteLine(currentY);
+                Dispatcher.UIThread.Post(() =>
+                {
+                    Position = new PixelPoint(Position.X, currentY);
+                });
+                MoveWindow(460, currentY - moveStep);
+                currentY -= moveStep;
+                await Task.Delay(20);
+            }
+
+            //this.IsVisible = true;
+            while (currentY < targetY)
+            {
+                
+                Dispatcher.UIThread.Post(() =>
+                {
+                    Position = new PixelPoint(Position.X, currentY);
+                });
+                MoveWindow(currentX, currentY + moveStep);
+                currentY += moveStep;
+                await Task.Delay(20);
+            }
+        });
+        
     }
     
     private void MoveWindow(double x, double y)

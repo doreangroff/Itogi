@@ -32,10 +32,10 @@ public partial class Emp_infoWin : Window
 
         _connectionSB = new MySqlConnectionStringBuilder
         {
-            Server = "localhost",//"10.10.1.24" "localhost"
-            Database = "itog", //"pro1_1" "itog" 
-            UserID = "user_1", //"user_01" "user_1"
-            Password = "1234" //"user01pro" "1234"
+            Server = "10.10.1.24",//"10.10.1.24" "localhost"
+            Database = "pro1_1", //"pro1_1" "itog" 
+            UserID = "user_01", //"user_01" "user_1"
+            Password = "user01pro" //"user01pro" "1234"
         };
         
         ShowTable();
@@ -46,9 +46,9 @@ public partial class Emp_infoWin : Window
     {
         string sql = """
                         select fio, post_name, department_name, working_rate, working_hours, salary, employee, post, department from emp_info
-                     join itog.departments d on d.department_id = emp_info.department
-                     join itog.employees e on e.employee_id = emp_info.employee
-                     join itog.posts p on p.post_id = emp_info.post
+                     join pro1_1.departments d on d.department_id = emp_info.department
+                     join pro1_1.employees e on e.employee_id = emp_info.employee
+                     join pro1_1.posts p on p.post_id = emp_info.post
                      """;
         using (var con = new MySqlConnection(_connectionSB.ConnectionString))
         {
@@ -128,11 +128,10 @@ public partial class Emp_infoWin : Window
         {
             MoveWindow(currentX, currentY + moveStep);
             currentY += moveStep;
-            await Task.Delay(40);
+            await Task.Delay(20);
         }
         emp.Show();
         this.Close();
-        emp.Position = new PixelPoint(459, -460);
 
     }
     
