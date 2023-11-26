@@ -16,7 +16,7 @@ public partial class EmployeeWin : Window
     {
         InitializeComponent();
         StartLoopAsync();
-        //this.IsVisible = false;
+        
 
     }
     

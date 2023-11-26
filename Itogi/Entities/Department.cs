@@ -4,10 +4,10 @@ public class Department
 {
     public Department(int departmnetId, string departmentName)
     {
-        Departmnet_id = departmnetId;
-        Department_name = departmentName;
+        DepartmnetId = departmnetId;
+        DepartmentName = departmentName;
     }
 
-    public int Departmnet_id { get; set; }
-    public string Department_name { get; set; }
+    public int DepartmnetId { get; set; }
+    public string DepartmentName { get; set; }
 }

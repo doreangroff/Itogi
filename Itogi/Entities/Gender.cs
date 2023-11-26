@@ -4,10 +4,10 @@ public class Gender
 {
     public Gender(int genderId, string genderName)
     {
-        Gender_id = genderId;
-        Gender_name = genderName;
+        GenderId = genderId;
+        GenderName = genderName;
     }
 
-    public int Gender_id { get; set; }
-    public string Gender_name { get; set; }
+    public int GenderId { get; set; }
+    public string GenderName { get; set; }
 }

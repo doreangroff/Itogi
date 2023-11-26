@@ -11,7 +11,10 @@
         <StackPanel Orientation="Horizontal" Spacing="10">
             <TextBox x:Name="searchInfo" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchInfo_OnTextChanged"></TextBox>
             <Button x:Name="SortBtn" Content="Сортировка по сотрудникам" Click="SortBtn_OnClick" Background="White" BorderThickness="2" BorderBrush="Black"></Button>
-            
+            <ComboBox x:Name="DepFiltr" x:CompileBindings="False" SelectionChanged="DepFiltr_OnSelectionChanged"
+                      DisplayMemberBinding="{Binding DepartmentName}" Width="155">
+            </ComboBox>
+            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" Click="ResetFiltr_OnClick"></Button>
         </StackPanel>
         <DataGrid x:Name="InfoGrid"
                   AutoGenerateColumns="False"
@@ -20,22 +23,22 @@
                   BorderThickness="1"
                   BorderBrush="Gray"
                   Margin="7,20"
+                  Width="809"
                   Height="500"
-                  
                   x:CompileBindings="False"><!--MinHeight="500"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Сотрудник" Binding="{Binding Epmloyee}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Должность" Binding="{Binding Post}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отдел" Binding="{Binding Department}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ставка" Binding="{Binding Working_rate}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Часы работы (в месяц)" Binding="{Binding Working_hours}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ставка" Binding="{Binding WorkingRate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Часы работы (в месяц)" Binding="{Binding WorkingHours}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Зарабатная плата" Binding="{Binding Salary}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>  
         <StackPanel Orientation="Horizontal">
-            <Button x:Name="EmployeesBtn" Content="Сотрудники" Click="EmployeesBtn_OnClick"></Button>
-            <TextBlock x:Name="x"></TextBlock>
-            <TextBlock x:Name="y"></TextBlock>
+            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
         </StackPanel>
     </StackPanel>
      

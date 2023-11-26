@@ -4,14 +4,14 @@ public class Employee
 {
     public Employee(int employeeId, string fio, int age, int gender, string phoneNumber)
     {
-        Employee_id = employeeId;
+        EmployeeId = employeeId;
         FIO = fio;
         Age = age;
         Gender = gender;
         Phone_number = phoneNumber;
     }
 
-    public int Employee_id { get; set; }
+    public int EmployeeId { get; set; }
     public string FIO { get; set; }
     public int Age { get; set; }
     public int Gender;
