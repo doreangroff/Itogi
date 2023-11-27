@@ -1,6 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Itogi.Windows.DepartmentsDir;
+using Itogi.Windows.EmpsDir;
+using Itogi.Windows.PostsDir;
 
 namespace Itogi;
 
@@ -15,7 +18,7 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new Emp_infoWin();
+            desktop.MainWindow = new PostWin();
         }
 
         base.OnFrameworkInitializationCompleted();

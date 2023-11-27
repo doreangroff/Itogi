@@ -98,7 +98,7 @@ public partial class AddInfo : RabStol
                             reader.GetInt32("employee_id"),
                             reader.GetString("fio"),
                             reader.GetInt32("age"),
-                            reader.GetInt32("gender"),
+                            reader.GetString("gender"),
                             reader.GetString("phone_number")
                         ));
                     }

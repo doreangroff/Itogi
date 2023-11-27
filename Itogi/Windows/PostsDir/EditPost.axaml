@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:entities="clr-namespace:Itogi.Entities"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:DataType="entities:Post"
+        x:Class="Itogi.Windows.PostsDir.EditPost"
+        Title="Добавить"
+        Height="200"
+        Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" Margin="0 50 0 0" HorizontalAlignment="Center">Название должности</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="TBName" Text="{Binding PostName}" Height="10" Margin="0 50 0 0" HorizontalAlignment="Left" Width="300"/>
+        
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Spacing="10" Orientation="Horizontal">
+            <Button Grid.Row="1" Grid.Column="1" Name="AddButton" Content="Изменить" Click="AddButton_OnClick" />
+            <Button Grid.Row="1" Grid.Column="0" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick" />
+            
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Itogi.Windows.DepartmentsDir.DepWin"
+        Title="Отделы">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBox x:Name="searchDep" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchDep_OnTextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid x:Name="DepGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  Margin="7,20"
+                  Width="809"
+                  Height="500"
+                  x:CompileBindings="False"><!--MinHeight="500"-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding DepartmnetId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название отдела" Binding="{Binding DepartmentName}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>  
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

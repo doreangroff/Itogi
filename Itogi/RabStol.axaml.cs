@@ -14,10 +14,10 @@ public partial class RabStol : Window
         InitializeComponent();
         _connectionSB = new MySqlConnectionStringBuilder
         {
-            Server = "localhost",//"10.10.1.24" "localhost"
-            Database = "itog", //"pro1_1" "itog" 
-            UserID = "user_1", //"user_01" "user_1"
-            Password = "1234" //"user01pro" "1234"
+            Server = "10.10.1.24",//"10.10.1.24" "localhost"
+            Database = "pro1_1", //"pro1_1" "itog" 
+            UserID = "user_01", //"user_01" "user_1"
+            Password = "user01pro" //"user01pro" "1234"
         };
     }
     

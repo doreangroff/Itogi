@@ -5,7 +5,38 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.EmpsDir.EmployeeWin"
         Width="1000"
-        IsVisible="False"
-        Title="EmployeeWin">
-    
+        Title="Сотрудники">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBox x:Name="searchEmp" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchEmp_OnTextChanged"></TextBox>
+            <Button x:Name="SortBtn" Content="Сортировка по ФИО" Click="SortBtn_OnClick" Background="White" BorderThickness="2" BorderBrush="Black"></Button>
+            <ComboBox x:Name="GenderFiltr" x:CompileBindings="False" SelectionChanged="GenderFiltr_OnSelectionChanged" Width="155"
+                      DisplayMemberBinding="{Binding GenderName}">
+            </ComboBox>
+            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" Click="ResetFiltr_OnClick"></Button>
+        </StackPanel>
+        <DataGrid x:Name="EmpGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  Margin="7,20"
+                  Width="809"
+                  Height="500"
+                  x:CompileBindings="False"><!--MinHeight="500"-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding EmployeeId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пол" Binding="{Binding Gender}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding PhoneNumber}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>  
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
+        </StackPanel>
+    </StackPanel>
 </Window>

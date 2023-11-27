@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Itogi.Windows.PostsDir.PostWin"
+        Title="PostWin">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBox x:Name="searchPosts" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchPost_OnTextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid x:Name="PostGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"
+                  Margin="7,20"
+                  Width="809"
+                  Height="500"
+                  x:CompileBindings="False"><!--MinHeight="500"-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding PostId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название должности" Binding="{Binding PostName}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>  
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
