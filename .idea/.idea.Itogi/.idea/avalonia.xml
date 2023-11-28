@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Itogi/App.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/ConnectionWin.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Emp_infoWin.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/MainWindow.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/RabStol.axaml" value="Itogi/Itogi.csproj" />

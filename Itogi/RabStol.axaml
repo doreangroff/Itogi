@@ -4,6 +4,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.RabStol"
+        
+        WindowState="Maximized"
         Title="MainWindow">
-    Welcome to Avalonia!
+    <Window.Styles>
+        <Style Selector="Button.icon">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <!-- <Image Source="{TemplateBinding Image}" /> -->
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                        <!-- <PathIcon Foreground="{TemplateBinding Foreground}" -->
+                        <!--           Data="{TemplateBinding Tag}" -->
+                        <!--           DockPanel.Dock="Left"></PathIcon> -->
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <!-- <Style Selector="^:pointerover"></Style> -->
+        </Style>
+    </Window.Styles>
+    
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical">
+            <Button Name="Info"
+                    Classes="icon"
+                    DoubleTapped="Info_OnDoubleTapped"
+                    Width="60"
+                    Height="60">
+                <Image Width="100" Height="100" Source="icons/info.png"></Image>
+            </Button>
+            <TextBlock>Учет кадров</TextBlock>
+            
+        </StackPanel>
+        <Button Name="Emps"
+                Classes="icon"
+                DoubleTapped="Emps_OnDoubleTapped"
+                Width="60"
+                Height="60">
+            <Image Source="icons/emps.png" Width="100" Height="100"></Image>
+        </Button>
+        <TextBlock>Сотрудники</TextBlock>
+        
+        <StackPanel Orientation="Vertical">
+            <Button Name="Deps"
+                    Classes="icon"
+                    DoubleTapped="Deps_OnDoubleTapped"
+                    Width="60"
+                    Height="60">
+                <Image Source="icons/department.png" Width="100" Height="100" ></Image>
+            </Button>
+            <TextBlock>Отделы</TextBlock>
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical">
+            <Button Name="Posts"
+                    Classes="icon"
+                    DoubleTapped="Posts_OnDoubleTapped"
+                    Width="60"
+                    Height="60">
+                <Image Source="icons/post.png" Height="" Width="80"></Image>
+            </Button>
+            <TextBlock>Должности</TextBlock>
+        </StackPanel>
+    </StackPanel>
+    
+    
 </Window>

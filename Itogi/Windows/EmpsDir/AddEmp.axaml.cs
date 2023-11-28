@@ -8,7 +8,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.EmpsDir;
 
-public partial class AddEmp : RabStol
+public partial class AddEmp : ConnectionWin
 {
     private List<Employee> _employees;
     private List<Gender> _genders;

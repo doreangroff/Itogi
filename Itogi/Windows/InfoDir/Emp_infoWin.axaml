@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Emp_infoWin"
         WindowStartupLocation="CenterScreen"
+        Height="600"
         Width="1000"
         Title="Информация о сотрудниках">
     <StackPanel Orientation="Vertical">

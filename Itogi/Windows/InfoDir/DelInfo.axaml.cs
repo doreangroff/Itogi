@@ -8,7 +8,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.InfoDir;
 
-public partial class DelInfo : RabStol
+public partial class DelInfo : ConnectionWin
 {
     private readonly Emp_info _selectedInfo;
     

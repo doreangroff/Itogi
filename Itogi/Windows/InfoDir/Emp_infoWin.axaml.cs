@@ -18,7 +18,7 @@ using Itogi.Windows.InfoDir;
 
 namespace Itogi;
 
-public partial class Emp_infoWin : RabStol
+public partial class Emp_infoWin : ConnectionWin
 {
     private List<Emp_info> _info;
     private List<Department> _departments;
@@ -31,7 +31,8 @@ public partial class Emp_infoWin : RabStol
         _departments = new List<Department>();
         FillDeps();
         ShowTable();
-        
+        Console.WriteLine(this.Height);
+        Console.WriteLine(this.Width);
 
     }
 

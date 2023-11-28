@@ -9,7 +9,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.PostsDir;
 
-public partial class AddPost : RabStol
+public partial class AddPost : ConnectionWin
 {
     private List<Post> _posts;
     

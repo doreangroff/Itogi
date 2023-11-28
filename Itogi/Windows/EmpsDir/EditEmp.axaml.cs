@@ -11,7 +11,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.EmpsDir;
 
-public partial class EditEmp : RabStol
+public partial class EditEmp : ConnectionWin
 {
     private readonly Employee _selectedEmployee;
     private List<Gender> _genders;

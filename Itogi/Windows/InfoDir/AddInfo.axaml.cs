@@ -9,7 +9,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.InfoDir;
 
-public partial class AddInfo : RabStol
+public partial class AddInfo : ConnectionWin
 {
     private List<Emp_info> _info;
     private List<Employee> _employees;
@@ -83,7 +83,9 @@ public partial class AddInfo : RabStol
 
     private void FillEmployees()
     {
-        string sql = "select * from employees";
+        string sql = "select employee_id, fio, age, gender_name, phone_number from employees " +
+                     "join pro1_1.genders g on g.gender_id = employees.gender " +
+                     "order by employee_id";
         using (var con = new MySqlConnection(_connectionSB.ConnectionString))
         {
             con.Open();
@@ -98,7 +100,7 @@ public partial class AddInfo : RabStol
                             reader.GetInt32("employee_id"),
                             reader.GetString("fio"),
                             reader.GetInt32("age"),
-                            reader.GetString("gender"),
+                            reader.GetString("gender_name"),
                             reader.GetString("phone_number")
                         ));
                     }

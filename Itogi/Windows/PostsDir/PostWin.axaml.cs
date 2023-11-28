@@ -11,7 +11,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.PostsDir;
 
-public partial class PostWin : RabStol
+public partial class PostWin : ConnectionWin
 {
     private List<Post> _posts;
     public PostWin()

@@ -10,7 +10,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.DepartmentsDir;
 
-public partial class EditDep : RabStol
+public partial class EditDep : ConnectionWin
 {
     private readonly Department _selectedDepartment;
     private List<Department> _departments;

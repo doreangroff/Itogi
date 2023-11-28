@@ -18,6 +18,7 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2"/>
         <PackageReference Include="MySqlConnector" Version="2.3.1" />
+        <PackageReference Include="Projektanker.Icons.Avalonia.FontAwesome" Version="8.3.0" />
     </ItemGroup>
 
 
@@ -26,5 +27,16 @@
         <DependentUpon>Emp_infoWin.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AvaloniaResource Include="icons\info.png" />
+      <None Remove="icons\emps.png" />
+      <AvaloniaResource Include="icons\emps.png" />
+      <None Remove="icons\department.png" />
+      <AvaloniaResource Include="icons\department.png" />
+      <None Remove="icons\post.png" />
+      <AvaloniaResource Include="icons\post.png" />
     </ItemGroup>
 </Project>

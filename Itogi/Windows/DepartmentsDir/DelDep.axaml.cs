@@ -8,7 +8,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.DepartmentsDir;
 
-public partial class DelDep : RabStol
+public partial class DelDep : ConnectionWin
 {
     private readonly Department _selectedDepartment;
     

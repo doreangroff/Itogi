@@ -8,7 +8,7 @@ using MySqlConnector;
 
 namespace Itogi.Windows.PostsDir;
 
-public partial class DelPost : RabStol
+public partial class DelPost : ConnectionWin
 {
     private readonly Post _selectedPost;
     
