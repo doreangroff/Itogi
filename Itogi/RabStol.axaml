@@ -4,8 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.RabStol"
-        
-        WindowState="Maximized"
+        SystemDecorations="None"
+        WindowState="FullScreen"
         Title="MainWindow">
     <Window.Styles>
         <Style Selector="Button.icon">
@@ -27,50 +27,92 @@
             <!-- <Style Selector="^:pointerover"></Style> -->
         </Style>
     </Window.Styles>
-    
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Vertical">
-            <Button Name="Info"
-                    Classes="icon"
-                    DoubleTapped="Info_OnDoubleTapped"
-                    Width="60"
-                    Height="60">
-                <Image Width="100" Height="100" Source="icons/info.png"></Image>
-            </Button>
-            <TextBlock>Учет кадров</TextBlock>
+    <Grid RowDefinitions="*, Auto" Background="Brown" >
+        <Grid Grid.Row="0" Background="Chartreuse" RowDefinitions="*, *" Margin="150, 0, 150, 0">
+            <Grid Grid.Row="0" ColumnDefinitions="*, *">
+            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Orientation="Vertical">
+                <StackPanel>
+                    <Button Name="Info"
+                            Classes="icon"
+                            DoubleTapped="Info_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="15 10 0 0 ">
+                        <Image Width="100" Height="100" Source="icons/info.png"></Image>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Учет кадров</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Name="Emps"
+                            Classes="icon"
+                            DoubleTapped="Emps_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="15 20 0 0 ">
+                        <Image Source="icons/emps.png" Width="100" Height="100"></Image>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Сотрудники</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Name="Deps"
+                            Classes="icon"
+                            DoubleTapped="Deps_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="15 20 0 0 ">
+                        <Image Source="icons/department.png" Width="100" Height="100" ></Image>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0">Отделы</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Name="Posts"
+                            Classes="icon"
+                            DoubleTapped="Posts_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="15 20 0 0 ">
+                        <Image Source="icons/post.png" Height="" Width="80"></Image>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Должности</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Vertical">
+        
+                <StackPanel Orientation="Vertical">
+                    <Button Name="btn"
+                            Classes="icon"
+                            DoubleTapped="Posts_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="0 10 0 0">
+                        <Image Source="icons/post.png" Height="" Width="80"></Image>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0 ">Должности</TextBlock>
+                </StackPanel>
+            </StackPanel>
+                
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" Orientation="Vertical">
+                    <Button Name="Insdsdfo"
+                            Classes="icon"
+                            DoubleTapped="Info_OnDoubleTapped"
+                            Width="60"
+                            Height="60"
+                            Margin="0 0 0 0">
+                        <Image Width="100" Height="100" Source="icons/info.png"></Image>
+                    </Button>
+                    <TextBlock>Учет кадров</TextBlock>
             
-        </StackPanel>
-        <Button Name="Emps"
-                Classes="icon"
-                DoubleTapped="Emps_OnDoubleTapped"
-                Width="60"
-                Height="60">
-            <Image Source="icons/emps.png" Width="100" Height="100"></Image>
-        </Button>
-        <TextBlock>Сотрудники</TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
         
-        <StackPanel Orientation="Vertical">
-            <Button Name="Deps"
-                    Classes="icon"
-                    DoubleTapped="Deps_OnDoubleTapped"
-                    Width="60"
-                    Height="60">
-                <Image Source="icons/department.png" Width="100" Height="100" ></Image>
-            </Button>
-            <TextBlock>Отделы</TextBlock>
-        </StackPanel>
-        
-        <StackPanel Orientation="Vertical">
-            <Button Name="Posts"
-                    Classes="icon"
-                    DoubleTapped="Posts_OnDoubleTapped"
-                    Width="60"
-                    Height="60">
-                <Image Source="icons/post.png" Height="" Width="80"></Image>
-            </Button>
-            <TextBlock>Должности</TextBlock>
-        </StackPanel>
-    </StackPanel>
+        <Grid Grid.Row="1" Height="30" Margin="150 0 150 0" Background="Blue">
+            <Button Name="ExitBtn" Content="Закрыть" Click="ExitBtn_OnClick"></Button>
+        </Grid>
+    </Grid>
+    
     
     
 </Window>

@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Itogi.Windows.DepartmentsDir;
 using Itogi.Windows.EmpsDir;
@@ -16,7 +17,6 @@ public partial class RabStol : Window
     public RabStol()
     {
         InitializeComponent();
-        
     }
     
     public void MoveWindow(double x, double y, Window window)
@@ -48,5 +48,10 @@ public partial class RabStol : Window
     {
         PostWin post = new PostWin();
         post.ShowDialog(this);
+    }
+
+    private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }
