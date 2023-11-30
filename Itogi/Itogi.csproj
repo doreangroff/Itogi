@@ -31,12 +31,32 @@
 
 
     <ItemGroup>
-      <AvaloniaResource Include="icons\info.png" />
       <None Remove="icons\emps.png" />
-      <AvaloniaResource Include="icons\emps.png" />
       <None Remove="icons\department.png" />
-      <AvaloniaResource Include="icons\department.png" />
       <None Remove="icons\post.png" />
-      <AvaloniaResource Include="icons\post.png" />
+      <None Remove="icons\vikl.png" />
+      <AvaloniaResource Include="photos\vikl.png" />
+      <None Remove="photos\desktop.png" />
+      <None Remove="photos\desktop2.jpg" />
+      <AvaloniaResource Include="photos\desktop2.jpg" />
+      <None Remove="photos\info.png" />
+      <None Remove="photos\emps.png" />
+      <AvaloniaResource Include="photos\emps.png" />
+      <None Remove="photos\department.png" />
+      <AvaloniaResource Include="photos\department.png" />
+      <None Remove="photos\teamwork.png" />
+      <AvaloniaResource Include="photos\info.png" />
+      <None Remove="photos\post.png" />
+      <AvaloniaResource Include="photos\post.png" />
+      <None Remove="photos\text-file.png" />
+      <AvaloniaResource Include="photos\text-file.png" />
+      <None Remove="photos\letter.png" />
+      <AvaloniaResource Include="photos\letter.png" />
+      <None Remove="fonts\ProggySquare.ttf" />
+      <AvaloniaResource Include="fonts\ProggySquare.ttf" />
+      <None Remove="fonts\Monocraft.ttf" />
+      <AvaloniaResource Include="fonts\Monocraft.ttf" />
+      <None Remove="photos\dyrachyo.jpg" />
+      <AvaloniaResource Include="photos\Camera.jpg" />
     </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Itogi.Windows;
 using Itogi.Windows.DepartmentsDir;
 using Itogi.Windows.EmpsDir;
 using Itogi.Windows.PostsDir;
@@ -17,6 +18,8 @@ public partial class RabStol : Window
     public RabStol()
     {
         InitializeComponent();
+        dyrachyo dyrachyo = new dyrachyo();
+        dyrachyo.Show();
     }
     
     public void MoveWindow(double x, double y, Window window)

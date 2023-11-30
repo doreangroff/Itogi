@@ -16,40 +16,45 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{TemplateBinding Padding}">
-                        <!-- <Image Source="{TemplateBinding Image}" /> -->
                         <ContentPresenter Content="{TemplateBinding Content}" />
-                        <!-- <PathIcon Foreground="{TemplateBinding Foreground}" -->
-                        <!--           Data="{TemplateBinding Tag}" -->
-                        <!--           DockPanel.Dock="Left"></PathIcon> -->
                     </Border>
                 </ControlTemplate>
             </Setter>
-            <!-- <Style Selector="^:pointerover"></Style> -->
         </Style>
     </Window.Styles>
+    
+    
     <Grid RowDefinitions="*, Auto" Background="Brown" >
-        <Grid Grid.Row="0" Background="Chartreuse" RowDefinitions="*, *" Margin="150, 0, 150, 0">
+        <Grid Grid.Row="0"  RowDefinitions="*, *" Margin="150, 0, 150, 0">
+           <Grid.Background>
+               <ImageBrush Source="photos/desktop2.jpg" Stretch="Fill"/>
+           </Grid.Background>
             <Grid Grid.Row="0" ColumnDefinitions="*, *">
-            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Orientation="Vertical">
-                <StackPanel>
-                    <Button Name="Info"
-                            Classes="icon"
-                            DoubleTapped="Info_OnDoubleTapped"
-                            Width="60"
-                            Height="60"
-                            Margin="15 10 0 0 ">
-                        <Image Width="100" Height="100" Source="icons/info.png"></Image>
-                    </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Учет кадров</TextBlock>
-                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" Grid.Column="0" Orientation="Vertical">
+                    <StackPanel>
+                        <Button Name="Info"
+                                Classes="icon"
+                                DoubleTapped="Info_OnDoubleTapped"
+                                Width="60"
+                                Height="60"
+                                Margin="15 10 0 0 "
+                                Background="Transparent">
+                            <Image Width="60" Height="60" Source="photos/info.png"></Image>
+                        </Button>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5 0 0 0 ">
+                            <TextBlock Text="Учет" TextAlignment="Center"></TextBlock>
+                            <TextBlock Text="Сотрудников" TextAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
                 <StackPanel>
                     <Button Name="Emps"
                             Classes="icon"
                             DoubleTapped="Emps_OnDoubleTapped"
                             Width="60"
                             Height="60"
-                            Margin="15 20 0 0 ">
-                        <Image Source="icons/emps.png" Width="100" Height="100"></Image>
+                            Margin="15 20 0 0 "
+                            Background="Transparent">
+                        <Image Source="photos/emps.png" Width="50" Height="50"></Image>
                     </Button>
                     <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Сотрудники</TextBlock>
                 </StackPanel>
@@ -59,10 +64,11 @@
                             DoubleTapped="Deps_OnDoubleTapped"
                             Width="60"
                             Height="60"
-                            Margin="15 20 0 0 ">
-                        <Image Source="icons/department.png" Width="100" Height="100" ></Image>
+                            Margin="15 20 0 0 "
+                            Background="Transparent">
+                        <Image Source="photos/department.png" Width="60" Height="60" ></Image>
                     </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0">Отделы</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Отделы</TextBlock>
                 </StackPanel>
                 <StackPanel>
                     <Button Name="Posts"
@@ -70,8 +76,9 @@
                             DoubleTapped="Posts_OnDoubleTapped"
                             Width="60"
                             Height="60"
-                            Margin="15 20 0 0 ">
-                        <Image Source="icons/post.png" Height="" Width="80"></Image>
+                            Margin="15 20 0 0 "
+                            Background="Transparent">
+                        <Image Source="photos/post.png" Height="60" Width="60"></Image>
                     </Button>
                     <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Должности</TextBlock>
                 </StackPanel>
@@ -84,32 +91,39 @@
                             DoubleTapped="Posts_OnDoubleTapped"
                             Width="60"
                             Height="60"
-                            Margin="0 10 0 0">
-                        <Image Source="icons/post.png" Height="" Width="80"></Image>
+                            Margin="0 10 0 0"
+                            Background="Transparent">
+                        <Image Source="photos/text-file.png" Height="80" Width="80"></Image>
                     </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0 ">Должности</TextBlock>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0 ">
+                        <TextBlock Text="Ответы на экзамен"></TextBlock>
+                        <TextBlock Text="по МДК 01.01"></TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
                 
             </Grid>
             <Grid Grid.Row="1">
                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" Orientation="Vertical">
-                    <Button Name="Insdsdfo"
+                    <Button Name="MessageBtn"
                             Classes="icon"
                             DoubleTapped="Info_OnDoubleTapped"
                             Width="60"
                             Height="60"
-                            Margin="0 0 0 0">
-                        <Image Width="100" Height="100" Source="icons/info.png"></Image>
+                            Margin="0 0 15 0"
+                            Background="Transparent">
+                        <Image Width="60" Height="60" Source="photos/letter.png"></Image>
                     </Button>
-                    <TextBlock>Учет кадров</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Margin="0 0 15 10 ">Почта</TextBlock>
             
                 </StackPanel>
             </Grid>
         </Grid>
         
-        <Grid Grid.Row="1" Height="30" Margin="150 0 150 0" Background="Blue">
-            <Button Name="ExitBtn" Content="Закрыть" Click="ExitBtn_OnClick"></Button>
+        <Grid Grid.Row="1" Height="30" Margin="150 0 150 0" Background="LightPink">
+            <Button Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="LightPink" BorderThickness="0 0 1 0 " BorderBrush="Black">
+                <Image Width="25" Height="25" Source="photos/vikl.png"></Image>
+            </Button>
         </Grid>
     </Grid>
     

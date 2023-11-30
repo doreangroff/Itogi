@@ -6,6 +6,7 @@
         <entry key="Itogi/App.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/ConnectionWin.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Emp_infoWin.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/FormattedTextBlock.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/MainWindow.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/RabStol.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/DepartmentsDir/AddDep.axaml" value="Itogi/Itogi.csproj" />
@@ -24,6 +25,7 @@
         <entry key="Itogi/Windows/PostsDir/DelPost.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/PostsDir/EditPost.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/PostsDir/PostWin.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/Windows/dyrachyo.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/entites.axaml" value="Itogi/Itogi.csproj" />
       </map>
     </option>
