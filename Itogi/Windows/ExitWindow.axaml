@@ -4,20 +4,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.ExitWindow"
-        
         CanResize="False"
         WindowStartupLocation="CenterScreen"
         Width="400"
+        Title="Выключение"
         Height="200">
-    <Grid>
-        <TextBlock Text="Выход" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"></TextBlock>
+    <Grid Background="LightPink">
+        <TextBlock Text="До свидания" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"></TextBlock>
         <TextBlock Text="Вы действительно хотите выйти?" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,20,40"></TextBlock>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-            <Button Name = "Yes" Content="Да" FontSize="18" Margin="0 0 100 0" Click="Yes_OnClick"></Button>
-            <Button Name = "No" Content="Нет" FontSize="18" Click="No_OnClick"></Button>
+            <Button Name = "Yes" Background="Transparent" Content="Да" FontSize="18" Margin="0 0 100 0" Click="Yes_OnClick"></Button>
+            <Button Name = "No" Content="Нет" Background="Transparent" FontSize="18" Click="No_OnClick"></Button>
         </StackPanel>
     </Grid>
-    <Window.CornerRadius>
-        100 100 100 100
-    </Window.CornerRadius>
 </Window>

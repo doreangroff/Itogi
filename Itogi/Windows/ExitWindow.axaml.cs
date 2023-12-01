@@ -13,7 +13,6 @@ public partial class ExitWindow : Window
     {
         InitializeComponent();
         
-       
     }
 
     private void Yes_OnClick(object? sender, RoutedEventArgs e)

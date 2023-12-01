@@ -15,13 +15,16 @@ namespace Itogi;
 public partial class RabStol : Window
 {
     dyrachyo dyrachyo = new dyrachyo();
+    private pochta pochta = new pochta();
     private bool dyrFlag = true;
     public RabStol()
     {
         InitializeComponent();
-       
+        DateTime currentDate = DateTime.Now;
+        var calendarDate = this.FindControl<CalendarDatePicker>("date");
+        calendarDate.SelectedDate = currentDate;
         dyrachyo.Show();
-        MoveWindow(1363, 0, dyrachyo);
+        MoveWindow(1368, 0, dyrachyo);
         dyrachyo.Closing += (sender, args) =>
         {
             dyrFlag = false;
@@ -53,6 +56,8 @@ public partial class RabStol : Window
     {
         DepWin dep = new DepWin();
         dep.ShowDialog(this);
+        Console.WriteLine(pochta.Position.Y);
+        Console.WriteLine(pochta.Position.X);
     }
 
     private void Posts_OnDoubleTapped(object? sender, TappedEventArgs e)
@@ -70,8 +75,9 @@ public partial class RabStol : Window
 
     private void MessageBtn_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        Console.WriteLine(dyrachyo.Position.X);
-        Console.WriteLine(dyrachyo.Position.Y);
+        pochta.Show();
+        MoveWindow(1267, 718, pochta);
+        
     }
 
     private void Btn_OnPointerEntered(object? sender, PointerEventArgs e)
@@ -80,14 +86,14 @@ public partial class RabStol : Window
         {
             dyrachyo.Width = 400;
             dyrachyo.Height = 400;
-            MoveWindow(1363, 0, dyrachyo);
+            MoveWindow(1368, 0, dyrachyo);
         }
         else
         {
             dyrachyo.Show();
             dyrachyo.Width = 400;
             dyrachyo.Height = 400;
-            MoveWindow(1363, 0, dyrachyo);
+            MoveWindow(1368, 0, dyrachyo);
             dyrFlag = true;
         }
         

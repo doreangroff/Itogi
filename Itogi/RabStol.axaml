@@ -129,10 +129,15 @@
         </Grid>
 
         <Grid Grid.Row="1" Height="30" Margin="150 0 150 0" Background="LightPink">
-            <Button Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="LightPink"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button HorizontalAlignment="Left" Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="LightPink"
                     BorderThickness="0 0 1 0 " BorderBrush="Black">
                 <Image Width="25" Height="25" Source="photos/vikl.png"></Image>
             </Button>
+            <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Right" Name="date"></CalendarDatePicker>
         </Grid>
     </Grid>
 

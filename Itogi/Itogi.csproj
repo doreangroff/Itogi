@@ -27,6 +27,9 @@
         <DependentUpon>Emp_infoWin.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="Windows\ExitWindow.axaml.cs">
+        <DependentUpon>ExitWindow.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 

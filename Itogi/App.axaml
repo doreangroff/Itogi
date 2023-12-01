@@ -14,5 +14,8 @@
         <Style Selector="Button">
             <Setter Property="FontFamily" Value="avares://itogi/fonts/Monocraft.ttf#Monocraft"></Setter>
         </Style>
+        <Style Selector="CalendarDatePicker">
+            <Setter Property="FontFamily" Value="avares://itogi/fonts/Monocraft.ttf#Monocraft"></Setter>
+        </Style>
     </Application.Styles>
 </Application>
