@@ -63,7 +63,9 @@ public partial class RabStol : Window
 
     private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        this.Close();
+        ExitWindow exit = new ExitWindow();
+        exit.ShowDialog(this);
+        
     }
 
     private void MessageBtn_OnDoubleTapped(object? sender, TappedEventArgs e)
@@ -76,11 +78,15 @@ public partial class RabStol : Window
     {
         if (dyrFlag == true)
         {
+            dyrachyo.Width = 400;
+            dyrachyo.Height = 400;
             MoveWindow(1363, 0, dyrachyo);
         }
         else
         {
             dyrachyo.Show();
+            dyrachyo.Width = 400;
+            dyrachyo.Height = 400;
             MoveWindow(1363, 0, dyrachyo);
             dyrFlag = true;
         }

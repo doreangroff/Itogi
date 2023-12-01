@@ -17,6 +17,7 @@
         <entry key="Itogi/Windows/EmpsDir/DelEmp.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/EmpsDir/EditEmp.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/EmpsDir/EmployeeWin.axaml" value="Itogi/Itogi.csproj" />
+        <entry key="Itogi/Windows/ExitWindow.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/InfoDir/AddInfo.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/InfoDir/DelInfo.axaml" value="Itogi/Itogi.csproj" />
         <entry key="Itogi/Windows/InfoDir/EditInfo.axaml" value="Itogi/Itogi.csproj" />
