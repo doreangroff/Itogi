@@ -10,6 +10,7 @@
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
         <Style Selector="TextBlock">
             <Setter Property="FontFamily" Value="avares://itogi/fonts/Monocraft.ttf#Monocraft"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
     </Application.Styles>
 </Application>

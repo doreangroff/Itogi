@@ -22,92 +22,100 @@
             </Setter>
         </Style>
     </Window.Styles>
-    
-    
-    <Grid RowDefinitions="*, Auto" Background="Brown" >
-        <Grid Grid.Row="0"  RowDefinitions="*, *" Margin="150, 0, 150, 0">
-           <Grid.Background>
-               <ImageBrush Source="photos/desktop2.jpg" Stretch="Fill"/>
-           </Grid.Background>
+
+
+    <Grid RowDefinitions="*, Auto" Background="Brown">
+        <Grid Grid.Row="0" RowDefinitions="*, *" Margin="150, 0, 150, 0">
+            <Grid.Background>
+                <ImageBrush Source="photos/desktop2.jpg" Stretch="Fill" />
+            </Grid.Background>
             <Grid Grid.Row="0" ColumnDefinitions="*, *">
-                <StackPanel HorizontalAlignment="Left" Grid.Column="0" Orientation="Vertical">
-                    <StackPanel>
+                <StackPanel HorizontalAlignment="Left" MaxWidth="Infinity" Grid.Column="0" Orientation="Vertical">
+                            <!-- Width="90"> -->
+                    <StackPanel HorizontalAlignment="Center" MaxWidth="105">
                         <Button Name="Info"
                                 Classes="icon"
                                 DoubleTapped="Info_OnDoubleTapped"
+                                HorizontalAlignment="Center" 
                                 Width="60"
                                 Height="60"
-                                Margin="15 10 0 0 "
+                                Margin="10 10 0 0 "
                                 Background="Transparent">
                             <Image Width="60" Height="60" Source="photos/info.png"></Image>
                         </Button>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5 0 0 0 ">
-                            <TextBlock Text="Учет" TextAlignment="Center"></TextBlock>
-                            <TextBlock Text="Сотрудников" TextAlignment="Center"></TextBlock>
+                        <TextBlock Margin="5 0 0 0" Padding="0" TextAlignment="Center">
+                            <Run Text="Учет" />
+                            <LineBreak />
+                            <Run Text="cотрудников"/>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" MaxWidth="100">
+                        <Button Name="Emps"
+                                Classes="icon"
+                                DoubleTapped="Emps_OnDoubleTapped"
+                                Width="60"
+                                HorizontalAlignment="Center"
+                                Height="60"
+                                Margin="15 20 0 0 "
+                                Background="Transparent">
+                            <Image Source="photos/emps.png" Width="50" Height="50"></Image>
+                        </Button>
+                        <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Сотрудники</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" MaxWidth="100">
+                        <Button Name="Deps"
+                                Classes="icon"
+                                DoubleTapped="Deps_OnDoubleTapped"
+                                Width="60"
+                                HorizontalAlignment="Center"
+                                Height="60"
+                                Margin="15 20 0 0 "
+                                Background="Transparent">
+                            <Image Source="photos/department.png" Width="60" Height="60"></Image>
+                        </Button>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Отделы</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" MaxWidth="100">
+                        <Button Name="Posts"
+                                Classes="icon"
+                                DoubleTapped="Posts_OnDoubleTapped"
+                                Width="60"
+                                HorizontalAlignment="Center"
+                                Height="60"
+                                Margin="15 20 0 0 "
+                                Background="Transparent">
+                            <Image Source="photos/post.png" Height="60" Width="60"></Image>
+                        </Button>
+                        <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Должности</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Vertical">
+
+                    <StackPanel Orientation="Vertical">
+                        <Button Name="btn"
+                                Classes="icon"
+                                PointerEntered="Btn_OnPointerEntered"
+                                Width="60"
+                                Height="60"
+                                Margin="0 10 0 0"
+                                Background="Transparent">
+                            <Image Source="photos/text-file.png" Height="80" Width="80"></Image>
+                        </Button>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Margin="0 0 0 0 ">
+                            <TextBlock Text="Ответы на экзамен"></TextBlock>
+                            <TextBlock Text="по МДК 01.01"></TextBlock>
                         </StackPanel>
                     </StackPanel>
-                <StackPanel>
-                    <Button Name="Emps"
-                            Classes="icon"
-                            DoubleTapped="Emps_OnDoubleTapped"
-                            Width="60"
-                            Height="60"
-                            Margin="15 20 0 0 "
-                            Background="Transparent">
-                        <Image Source="photos/emps.png" Width="50" Height="50"></Image>
-                    </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Сотрудники</TextBlock>
                 </StackPanel>
-                <StackPanel>
-                    <Button Name="Deps"
-                            Classes="icon"
-                            DoubleTapped="Deps_OnDoubleTapped"
-                            Width="60"
-                            Height="60"
-                            Margin="15 20 0 0 "
-                            Background="Transparent">
-                        <Image Source="photos/department.png" Width="60" Height="60" ></Image>
-                    </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Отделы</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <Button Name="Posts"
-                            Classes="icon"
-                            DoubleTapped="Posts_OnDoubleTapped"
-                            Width="60"
-                            Height="60"
-                            Margin="15 20 0 0 "
-                            Background="Transparent">
-                        <Image Source="photos/post.png" Height="60" Width="60"></Image>
-                    </Button>
-                    <TextBlock HorizontalAlignment="Center" Margin="5 0 0 0 ">Должности</TextBlock>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Vertical">
-        
-                <StackPanel Orientation="Vertical">
-                    <Button Name="btn"
-                            Classes="icon"
-                            DoubleTapped="Posts_OnDoubleTapped"
-                            Width="60"
-                            Height="60"
-                            Margin="0 10 0 0"
-                            Background="Transparent">
-                        <Image Source="photos/text-file.png" Height="80" Width="80"></Image>
-                    </Button>
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0 ">
-                        <TextBlock Text="Ответы на экзамен"></TextBlock>
-                        <TextBlock Text="по МДК 01.01"></TextBlock>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-                
+
             </Grid>
             <Grid Grid.Row="1">
-                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0"
+                            Orientation="Vertical">
                     <Button Name="MessageBtn"
                             Classes="icon"
-                            DoubleTapped="Info_OnDoubleTapped"
+                            DoubleTapped="MessageBtn_OnDoubleTapped"
                             Width="60"
                             Height="60"
                             Margin="0 0 15 0"
@@ -115,18 +123,18 @@
                         <Image Width="60" Height="60" Source="photos/letter.png"></Image>
                     </Button>
                     <TextBlock HorizontalAlignment="Center" Margin="0 0 15 10 ">Почта</TextBlock>
-            
+
                 </StackPanel>
             </Grid>
         </Grid>
-        
+
         <Grid Grid.Row="1" Height="30" Margin="150 0 150 0" Background="LightPink">
-            <Button Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="LightPink" BorderThickness="0 0 1 0 " BorderBrush="Black">
+            <Button Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="LightPink"
+                    BorderThickness="0 0 1 0 " BorderBrush="Black">
                 <Image Width="25" Height="25" Source="photos/vikl.png"></Image>
             </Button>
         </Grid>
     </Grid>
-    
-    
-    
+
+
 </Window>

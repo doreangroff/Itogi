@@ -14,12 +14,20 @@ namespace Itogi;
 
 public partial class RabStol : Window
 {
-    
+    dyrachyo dyrachyo = new dyrachyo();
+    private bool dyrFlag = true;
     public RabStol()
     {
         InitializeComponent();
-        dyrachyo dyrachyo = new dyrachyo();
+       
         dyrachyo.Show();
+        MoveWindow(1363, 0, dyrachyo);
+        dyrachyo.Closing += (sender, args) =>
+        {
+            dyrFlag = false;
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
     }
     
     public void MoveWindow(double x, double y, Window window)
@@ -56,5 +64,26 @@ public partial class RabStol : Window
     private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         this.Close();
+    }
+
+    private void MessageBtn_OnDoubleTapped(object? sender, TappedEventArgs e)
+    {
+        Console.WriteLine(dyrachyo.Position.X);
+        Console.WriteLine(dyrachyo.Position.Y);
+    }
+
+    private void Btn_OnPointerEntered(object? sender, PointerEventArgs e)
+    {
+        if (dyrFlag == true)
+        {
+            MoveWindow(1363, 0, dyrachyo);
+        }
+        else
+        {
+            dyrachyo.Show();
+            MoveWindow(1363, 0, dyrachyo);
+            dyrFlag = true;
+        }
+        
     }
 }
