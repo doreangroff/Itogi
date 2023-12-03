@@ -17,6 +17,7 @@ public partial class RabStol : Window
     dyrachyo dyrachyo = new dyrachyo();
     private pochta pochta = new pochta();
     private bool dyrFlag = true;
+    private bool pochtaFlag = true;
     public RabStol()
     {
         InitializeComponent();
@@ -24,10 +25,16 @@ public partial class RabStol : Window
         var calendarDate = this.FindControl<CalendarDatePicker>("date");
         calendarDate.SelectedDate = currentDate;
         dyrachyo.Show();
-        MoveWindow(1368, 0, dyrachyo);
+        MoveWindow(1418, 0, dyrachyo);
         dyrachyo.Closing += (sender, args) =>
         {
             dyrFlag = false;
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
+        pochta.Closing += (sender, args) =>
+        {
+            pochtaFlag = false;
             (sender as Window)?.Hide();
             args.Cancel = true;
         };
@@ -68,6 +75,7 @@ public partial class RabStol : Window
 
     private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
+        Console.WriteLine(dyrachyo.Position.X);
         ExitWindow exit = new ExitWindow();
         exit.ShowDialog(this);
         
@@ -84,16 +92,16 @@ public partial class RabStol : Window
     {
         if (dyrFlag == true)
         {
-            dyrachyo.Width = 400;
-            dyrachyo.Height = 400;
-            MoveWindow(1368, 0, dyrachyo);
+            dyrachyo.Width = 350;
+            dyrachyo.Height = 350;
+            MoveWindow(1418, 0, dyrachyo);
         }
         else
         {
             dyrachyo.Show();
-            dyrachyo.Width = 400;
-            dyrachyo.Height = 400;
-            MoveWindow(1368, 0, dyrachyo);
+            dyrachyo.Width = 350;
+            dyrachyo.Height = 350;
+            MoveWindow(1418, 0, dyrachyo);
             dyrFlag = true;
         }
         

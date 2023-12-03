@@ -61,5 +61,12 @@
       <AvaloniaResource Include="fonts\Monocraft.ttf" />
       <None Remove="photos\dyrachyo.jpg" />
       <AvaloniaResource Include="photos\Camera.jpg" />
+      <None Remove="photos\sunglasses.png" />
+      <AvaloniaResource Include="photos\sunglasses.png" />
+      <None Remove="photos\openWin.png" />
+      <AvaloniaResource Include="photos\openWin.png" />
+      <None Remove="photos\sboky.png" />
+      <None Remove="photos\sboky.jpg" />
+      <AvaloniaResource Include="photos\sboky.jpg" />
     </ItemGroup>
 </Project>

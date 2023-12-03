@@ -5,22 +5,28 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.pochta"
         Title="Почта"
+        Topmost="True"
         Height="300"
         Width="500">
-    <Grid Background="LightPink">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Border Background="#42AAFF" Margin="5 0 0 0" Width="300" HorizontalAlignment="Left" CornerRadius="10" Height="30" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Name="message"  VerticalAlignment="Center"></TextBlock>
-        </Border>
-        <Button Background="Transparent" Width="60" Height="60" HorizontalAlignment="Left" Margin="5 0 5 0" Grid.Column="1">
-            <Image Grid.Column="1" Width="60" Height="60" Source="avares://itogi/photos/letter.png"></Image>
-        </Button>
+    <Grid>
+        <Grid Background="LightPink">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel x:Name="textPanel" Grid.Column="0" VerticalAlignment="Center">
+                <Border Background="#42AAFF" Margin="5 7 0 0" HorizontalAlignment="Left" CornerRadius="10" Height="30" BorderBrush="Black" BorderThickness="0.6">
+                    <TextBlock Name="message" VerticalAlignment="Center" Padding="5 0 0 0 "></TextBlock>
+                </Border>
+            </StackPanel>
+
+            <Image x:Name="imagePanel" Grid.Column="1" Stretch="UniformToFill" />
+        </Grid>
+
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Кнопка 1" Click="Button1_Click" />
+            <Button Content="Кнопка 2" Click="Button2_Click" />
+        </StackPanel>
     </Grid>
 </Window>
