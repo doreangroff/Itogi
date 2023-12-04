@@ -19,6 +19,11 @@ public partial class DepWin : ConnectionWin
         InitializeComponent();
         _departments = new List<Department>();
         ShowTable();
+        this.Closing += (sender, args) =>
+        {
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
     }
 
     private void ShowTable()

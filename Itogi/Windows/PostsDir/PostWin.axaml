@@ -4,10 +4,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.PostsDir.PostWin"
-        Title="PostWin">
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <TextBox x:Name="searchPosts" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchPost_OnTextChanged"></TextBox>
+        WindowStartupLocation="CenterScreen"
+        Height="620"
+        Width="900"
+        Title="Дожности">
+    <StackPanel Orientation="Vertical" Background="#7C68AD">
+        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="0 17 0 0">
+            <TextBox x:Name="searchPosts" Background="Transparent" Watermark="Поиск" Width="450" TextChanged="SearchPost_OnTextChanged"></TextBox>
         </StackPanel>
         <DataGrid x:Name="PostGrid"
                   AutoGenerateColumns="False"
@@ -15,6 +18,8 @@
                   GridLinesVisibility="All"
                   BorderThickness="1"
                   BorderBrush="Gray"
+                  CornerRadius="5"
+                  Background="White"
                   Margin="7,20"
                   Width="809"
                   Height="500"
@@ -24,10 +29,10 @@
                 <DataGridTextColumn Header="Название должности" Binding="{Binding PostName}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>  
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
-            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
-            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="AddBtn" Background="Transparent" Content="Добавить" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Background="Transparent" Content="Редактировать" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Background="Transparent" Content="Удалить" Click="DelButton_OnClick"></Button>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -33,6 +33,11 @@ public partial class Emp_infoWin : ConnectionWin
         ShowTable();
         Console.WriteLine(this.Height);
         Console.WriteLine(this.Width);
+        this.Closing += (sender, args) =>
+        {
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
 
     }
 
@@ -67,9 +72,9 @@ public partial class Emp_infoWin : ConnectionWin
         _info = new List<Emp_info>();
         string sql = """
                         select fio, post_name, department_name, working_rate, working_hours, salary, employee, post, department from emp_info
-                     join pro1_1.departments d on d.department_id = emp_info.department
-                     join pro1_1.employees e on e.employee_id = emp_info.employee
-                     join pro1_1.posts p on p.post_id = emp_info.post
+                     join itog.departments d on d.department_id = emp_info.department
+                     join itog.employees e on e.employee_id = emp_info.employee
+                     join itog.posts p on p.post_id = emp_info.post
                      order by employee
                      """;
         using (var con = new MySqlConnection(_connectionSB.ConnectionString))
@@ -147,7 +152,7 @@ public partial class Emp_infoWin : ConnectionWin
 
     private void ResetFiltr_OnClick(object? sender, RoutedEventArgs e)
     {
-        SortBtn.Background = Brushes.White;
+        SortBtn.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#7C68AD"));
         InfoGrid.ItemsSource = _info;
     }
 

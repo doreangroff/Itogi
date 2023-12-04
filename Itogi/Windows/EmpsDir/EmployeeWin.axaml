@@ -4,16 +4,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.EmpsDir.EmployeeWin"
-        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Height="620"
+        Width="900"
         Title="Сотрудники">
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <TextBox x:Name="searchEmp" Margin="5 0 0 0 " Watermark="Поиск" Width="450" TextChanged="SearchEmp_OnTextChanged"></TextBox>
-            <Button x:Name="SortBtn" Content="Сортировка по ФИО" Click="SortBtn_OnClick" Background="White" BorderThickness="2" BorderBrush="Black"></Button>
-            <ComboBox x:Name="GenderFiltr" x:CompileBindings="False" SelectionChanged="GenderFiltr_OnSelectionChanged" Width="155"
+    <StackPanel Orientation="Vertical" Background="#7C68AD">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 17 0 0" Spacing="10">
+            <TextBox x:Name="searchEmp" Watermark="Поиск" Background="Transparent" Width="290" TextChanged="SearchEmp_OnTextChanged"></TextBox>
+            <Button x:Name="SortBtn" Content="Сортировка по ФИО" Click="SortBtn_OnClick" Background="Transparent" BorderThickness="2" BorderBrush="Black"></Button>
+            <ComboBox x:Name="GenderFiltr" x:CompileBindings="False" SelectionChanged="GenderFiltr_OnSelectionChanged" Width="155" Background="Transparent"
                       DisplayMemberBinding="{Binding GenderName}">
             </ComboBox>
-            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" Click="ResetFiltr_OnClick"></Button>
+            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" Background="Transparent" Click="ResetFiltr_OnClick"></Button>
         </StackPanel>
         <DataGrid x:Name="EmpGrid"
                   AutoGenerateColumns="False"
@@ -24,6 +26,8 @@
                   Margin="7,20"
                   Width="809"
                   Height="500"
+                  CornerRadius="5"
+                  Background="White"
                   x:CompileBindings="False"><!--MinHeight="500"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding EmployeeId}"></DataGridTextColumn>
@@ -33,10 +37,10 @@
                 <DataGridTextColumn Header="Номер телефона" Binding="{Binding PhoneNumber}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>  
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="AddBtn" Content="Добавить" Click="AddBtn_OnClick"></Button>
-            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"></Button>
-            <Button x:Name="DelBtn" Content="Удалить" Click="DelButton_OnClick"></Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="AddBtn" Content="Добавить" Background="Transparent" Click="AddBtn_OnClick"></Button>
+            <Button x:Name="EditBtn" Content="Редактировать" Background="Transparent" Click="EditBtn_OnClick"></Button>
+            <Button x:Name="DelBtn" Content="Удалить" Background="Transparent" Click="DelButton_OnClick"></Button>
         </StackPanel>
     </StackPanel>
 </Window>

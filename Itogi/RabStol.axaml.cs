@@ -5,6 +5,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Itogi.Entities;
 using Itogi.Windows;
 using Itogi.Windows.DepartmentsDir;
 using Itogi.Windows.EmpsDir;
@@ -15,14 +16,19 @@ namespace Itogi;
 
 public partial class RabStol : Window
 {
-    dyrachyo dyrachyo = new dyrachyo()
-    {
-        Topmost = true
-    };
+    dyrachyo dyrachyo = new dyrachyo() { Topmost = true };
     private pochta pochta = new pochta();
+    private Emp_infoWin info = new Emp_infoWin();
+    private EmployeeWin emps = new EmployeeWin();
+    private DepWin dep = new DepWin();
+    private PostWin post = new PostWin();
+    
     private bool dyrFlag = true;
     private bool pochtaFlag = false;
     private bool infoFlag = false;
+    private bool empsFlag = false;
+    private bool depFlag = false;
+    private bool postFlag = false;
     
     public RabStol()
     {
@@ -30,24 +36,25 @@ public partial class RabStol : Window
         DateTime currentDate = DateTime.Now;
         var calendarDate = this.FindControl<CalendarDatePicker>("date");
         calendarDate.SelectedDate = currentDate;
-        
         InitDurachyo();
+        
+        pochta = new pochta();
+        info = new Emp_infoWin();
+        emps = new EmployeeWin();
+        dep = new DepWin();
+        post = new PostWin();
     }
 
     private void InitDurachyo()
     {
         dyrachyo = new dyrachyo();
         dyrachyo.Show();
-        MoveWindow(1411, 0, dyrachyo);
-        
-    }
+        MoveWindow(1418, 0, dyrachyo);
+        dyrachyo.Closing += delegate
+        {
+            dyrFlag = false;
+        };
 
-    private void InitPochta()
-    {
-        pochta = new pochta();
-        pochta.Show();
-        MoveWindow(1213, 718, pochta);
-        pochtaFlag = true;
     }
 
     public void MoveWindow(double x, double y, Window window)
@@ -57,32 +64,35 @@ public partial class RabStol : Window
     
     private void Info_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        Emp_infoWin info = new Emp_infoWin();
-        info.ShowDialog(this);
+        info.Show();
+        infoFlag = true;
+        info.Closing += delegate { infoFlag = false;};
     }
 
     private void Emps_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        EmployeeWin emp = new EmployeeWin();
-        emp.ShowDialog(this);
+        emps.Show();
+        empsFlag = true;
+        emps.Closing += delegate { empsFlag = false;};
     }
 
     private void Deps_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        DepWin dep = new DepWin();
-        dep.ShowDialog(this);
+        dep.Show();
+        depFlag = true;
+        dep.Closing += delegate { depFlag = false;};
         
     }
 
     private void Posts_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        PostWin post = new PostWin();
-        post.ShowDialog(this);
+        post.Show();
+        postFlag = true;
+        post.Closing += delegate { postFlag = false;};
     }
 
     private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        Console.WriteLine(dyrFlag.ToString());
         ExitWindow exit = new ExitWindow();
         exit.ShowDialog(this);
         
@@ -90,8 +100,10 @@ public partial class RabStol : Window
 
     private void MessageBtn_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        InitPochta();
-        pochta.Closing += delegate { pochtaFlag = false; Console.WriteLine(pochtaFlag.ToString());};
+        pochta.Show();
+        MoveWindow(1217, 718, pochta);
+        pochtaFlag = true;
+        pochta.Closing += delegate { pochtaFlag = false;};
     }
 
     private void Btn_OnPointerEntered(object? sender, PointerEventArgs e)
@@ -100,14 +112,11 @@ public partial class RabStol : Window
         {
             dyrachyo.Width = 300;
             dyrachyo.Height = 300;
-            MoveWindow(1411, 0, dyrachyo);
+            MoveWindow(1418, 0, dyrachyo);
         }
         else
         {
-            dyrachyo.Show();
-            dyrachyo.Width = 300;
-            dyrachyo.Height = 300;
-            MoveWindow(1411, 0, dyrachyo);
+            InitDurachyo();
             dyrFlag = true;
         }
         
@@ -126,7 +135,6 @@ public partial class RabStol : Window
             InitDurachyo();
             dyrFlag = true;
         }
-        ButtonColors(dyrFlag, Cam);
     }
 
     private void Poch_OnClick(object? sender, RoutedEventArgs e)
@@ -138,54 +146,78 @@ public partial class RabStol : Window
         }
         else
         {
-            InitPochta();
+            pochta.Show();
+            MoveWindow(1217, 718, pochta);
             pochtaFlag = true;
         }
-        ButtonColors(pochtaFlag, poch);
     }
 
     private void InfoBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        Emp_infoWin info = new Emp_infoWin();
-        OpenWindows(infoFlag, info);
+        if (infoFlag == false)
+        {
+            info.Show();
+            infoFlag = true;
+        }
+        else
+        {
+            info.Close();
+            infoFlag = false;
+        }
     }
 
     private void EmpBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        if (empsFlag == false)
+        {
+            emps.Show();
+            empsFlag = true;
+        }
+        else
+        {
+            emps.Close();
+            empsFlag = false;
+        }
     }
 
     private void DepBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        if (depFlag == false)
+        {
+            dep.Show();
+            depFlag = true;
+        }
+        else
+        {
+            dep.Close();
+            depFlag = false;
+        }
     }
 
     private void PostBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
-    }
-
-    private void ButtonColors(bool flag, Button button)
-    {
-        if (flag == true)
+        if (postFlag == false)
         {
-            button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#564b70")); //#564b70
+            post.Show();
+            postFlag = true;
         }
         else
         {
-            button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#7C68AD"));
+            post.Close();
+            postFlag = false;
         }
     }
+    
 
-    private void OpenWindows(bool flag, Window window)
+    private void Fivaproldge(object? sender, PointerEventArgs e)
     {
-        if (flag == true)
+        if (sender is Button button)
         {
-            window.Close();
-        }
-        else
-        {
-            window.Show();
+            button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#564b70"));
+            button.PointerExited += (_, _) =>
+            {
+                button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#7C68AD"));
+            };
         }
     }
 }

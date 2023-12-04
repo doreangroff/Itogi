@@ -22,7 +22,12 @@ public partial class pochta : Window
     private StackPanel panel;
     private Avalonia.Controls.Image image;
     private static string prevText;
-    string[] mesMas = { "Ты молодец, у тебя все получится!!!", "Брекшпрекникс"};
+    string[] mesMas =
+    {
+        "Ты молодец, у тебя все получится!!!", "Брекшпрекникс", "Adios paysos", "Пора устроить бучу", "Патролим", "Плюс вайб", "Минус вайб", "5-6 или 7-8???", "I need mama(", "Хлопья :3",
+        "Ну как вы там, карлики?", "Струячим", "ВОВА(-_-)", "Это был байт, это гениальный байт", "А в честь чего, собственно?", "Я сегодня не в форме", "Это наш, это наш, это наш шанс"
+        
+    };
     
     public pochta()
     {
@@ -30,8 +35,7 @@ public partial class pochta : Window
         stack = this.FindControl<StackPanel>("textPanel");
         image = this.FindControl<Avalonia.Controls.Image>("imagePanel");
         panel = this.FindControl<StackPanel>("Panel");
-        int m = rand.Next(0, 2);
-        Console.WriteLine(m.ToString());
+        int m = rand.Next(0, 17);
         prevText = $"{mesMas[m]}";
         message.Text = prevText;
         AttachHandlers();
@@ -72,7 +76,7 @@ public partial class pochta : Window
         e.Cancel = true;
         this.Hide();
         
-        int m = rand.Next(0, 2);
+        int m = rand.Next(0, 17);
         string newText = $"{mesMas[m]}";
         
         AddTextBlock(newText);
@@ -113,6 +117,48 @@ public partial class pochta : Window
         Avalonia.Controls.Image image = new Avalonia.Controls.Image()
         {
             Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/cry.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        panel.Children.Add(image);
+    }
+
+    private void Love_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/love.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        panel.Children.Add(image);
+    }
+
+    private void Evil_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/evil.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        panel.Children.Add(image);
+    }
+
+    private void Naughty_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/naughty.png"))),
             Margin = new Thickness(0, 35, 5, 0),
             Width = 50,
             Height = 50,

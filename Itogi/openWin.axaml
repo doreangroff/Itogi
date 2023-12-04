@@ -6,6 +6,7 @@
         x:Class="Itogi.openWin"
         SystemDecorations="None"
         WindowState="FullScreen"
+        Topmost="True"
         Title="openWin">
     <Grid RowDefinitions="*, Auto" Background="Black">
         <Grid Grid.Row="0" RowDefinitions="*, *" Margin="200, 0, 200, 0">

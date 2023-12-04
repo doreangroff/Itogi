@@ -19,7 +19,11 @@ public partial class PostWin : ConnectionWin
         InitializeComponent();
         _posts = new List<Post>();
         ShowTable();
-        
+        this.Closing += (sender, args) =>
+        {
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
     }
 
     private void ShowTable()

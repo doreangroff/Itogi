@@ -6,11 +6,11 @@
         x:Class="Itogi.Windows.PostsDir.AddPost"
         Title="Добавить"
         Height="200"
-        Width="500"
+        Width="550"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#7C68AD">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="190"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -19,11 +19,11 @@
         </Grid.RowDefinitions>
         
         <TextBlock Grid.Row="0" VerticalAlignment="Center" Margin="10 50 0 0" HorizontalAlignment="Center">Название должности</TextBlock>
-        <TextBox Grid.Row="0" Grid.Column="1" Name="TBName" Height="10" Margin="10 50 0 0" HorizontalAlignment="Left" Width="300"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Background="Transparent" Name="TBName" Height="10" Margin="10 50 0 0" HorizontalAlignment="Left" Width="300"/>
         
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Spacing="10" Orientation="Horizontal">
-            <Button Grid.Row="1" Grid.Column="1" Name="AddButton" Content="Добавить" Click="AddButton_OnClick" />
-            <Button Grid.Row="1" Grid.Column="0" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick" />
+            <Button Grid.Row="1" Grid.Column="1" Name="AddButton" Background="Transparent" Content="Добавить" Click="AddButton_OnClick" />
+            <Button Grid.Row="1" Grid.Column="0" Name="BackButton" Background="Transparent" Content="Вернуться" Click="BackButton_OnClick" />
             
         </StackPanel>
     </Grid>

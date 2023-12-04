@@ -27,6 +27,11 @@ public partial class EmployeeWin : ConnectionWin
         _genders = new List<Gender>();
         ShowTable();
         FillGenders();
+        this.Closing += (sender, args) =>
+        {
+            (sender as Window)?.Hide();
+            args.Cancel = true;
+        };
 
     }
     
@@ -61,7 +66,7 @@ public partial class EmployeeWin : ConnectionWin
         _employees = new List<Employee>();
         string sql = """
                         select employee_id, fio, age, gender_name, phone_number from employees
-                        join pro1_1.genders g on g.gender_id = employees.gender 
+                        join itog.genders g on g.gender_id = employees.gender 
                         order by employee_id
                      """;
         using (var con = new MySqlConnection(_connectionSB.ConnectionString))
@@ -105,7 +110,7 @@ public partial class EmployeeWin : ConnectionWin
     {
         if (flag == false)
         {
-            SortBtn.Background = Brushes.Gold;
+            SortBtn.Background = Brushes.White;
             var sortEmps = _employees;
             sortEmps = sortEmps.OrderBy(x => x.FIO).ToList();
             EmpGrid.ItemsSource = sortEmps;
@@ -113,7 +118,7 @@ public partial class EmployeeWin : ConnectionWin
         }
         else
         {
-            SortBtn.Background = Brushes.White;
+            SortBtn.Background = Brushes.Transparent;
             EmpGrid.ItemsSource = _employees;
             flag = false;
         }
@@ -130,7 +135,7 @@ public partial class EmployeeWin : ConnectionWin
 
     private void ResetFiltr_OnClick(object? sender, RoutedEventArgs e)
     {
-        SortBtn.Background = Brushes.White;
+        SortBtn.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#7C68AD"));
         EmpGrid.ItemsSource = _employees;
     }
 

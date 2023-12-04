@@ -16,6 +16,8 @@ public partial class openWin : Window
         InitializeComponent();
         AttachHandlers();
         InitializeTimer();
+        RabStol stol = new RabStol();
+        stol.Show();
         
     }
     
@@ -44,7 +46,6 @@ public partial class openWin : Window
     {
        timer.Stop();
        this.Close();
-        RabStol stol = new RabStol();
-       stol.Show();
+       
     }
 }

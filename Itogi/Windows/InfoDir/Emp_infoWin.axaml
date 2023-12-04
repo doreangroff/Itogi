@@ -9,13 +9,13 @@
         Width="900"
         Title="Информация о сотрудниках">
     <StackPanel Orientation="Vertical" Background="#7C68AD">
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <TextBox x:Name="searchInfo" Margin="5 5 0 0 " Watermark="Поиск" Background="Transparent" Width="290" TextChanged="SearchInfo_OnTextChanged"></TextBox>
-            <Button x:Name="SortBtn" Margin="0 5 0 0" Content="Сортировка по сотрудникам" Click="SortBtn_OnClick" Background="Transparent" ></Button>
-            <ComboBox x:Name="DepFiltr" x:CompileBindings="False" SelectionChanged="DepFiltr_OnSelectionChanged" Background="Transparent" Margin="0 5 0 0 "
+        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="0 17 0 0">
+            <TextBox x:Name="searchInfo"  Watermark="Поиск" Background="Transparent" Width="290" TextChanged="SearchInfo_OnTextChanged"></TextBox>
+            <Button x:Name="SortBtn" Content="Сортировка по сотрудникам" Click="SortBtn_OnClick" Background="Transparent" ></Button>
+            <ComboBox x:Name="DepFiltr" x:CompileBindings="False" SelectionChanged="DepFiltr_OnSelectionChanged" Background="Transparent" 
                       DisplayMemberBinding="{Binding DepartmentName}" Width="155">
             </ComboBox>
-            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" VerticalAlignment="Center" Background="Transparent" Click="ResetFiltr_OnClick" Margin="0 5 0 0"></Button>
+            <Button x:Name="ResetFiltr" Content="Сбросить фильтр" VerticalAlignment="Center" Background="Transparent" Click="ResetFiltr_OnClick"></Button>
         </StackPanel>
         <DataGrid x:Name="InfoGrid"
                   AutoGenerateColumns="False"

@@ -52,7 +52,7 @@
                     Background="Transparent"
                     Margin="0 0 0 2">
                 <Image Width="50" Height="50" Source="avares://itogi/photos/sunglasses.png"></Image></Button>
-            <Button Click="Button2_Click" 
+            <Button Click="Button2_Click" Name="weary"
                     Classes="icon"
                     HorizontalAlignment="Center" 
                     Width="50"
@@ -60,7 +60,7 @@
                     Background="Transparent"
                     Margin="0 0 0 2">
                 <Image Width="50" Height="50" Source="avares://itogi/photos/weary.png"></Image></Button>
-            <Button Click="Button_OnClick"
+            <Button Click="Button_OnClick" Name="cry"
                     Classes="icon"
                     HorizontalAlignment="Center" 
                     Width="50"
@@ -68,6 +68,30 @@
                     Background="Transparent"
                     Margin="0 0 0 2">
                 <Image Width="50" Height="50" Source="avares://itogi/photos/cry.png"></Image></Button>
+            <Button Click="Love_OnClick" Name="love"
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/love.png"></Image></Button>
+            <Button Click="Evil_OnClick" Name="evil"
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/evil.png"></Image></Button>
+            <Button Click="Naughty_OnClick" Name="naughty"
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/naughty.png"></Image></Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -4,10 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Itogi.Windows.EmpsDir.AddEmp"
+        WindowStartupLocation="CenterScreen"
         Title="Добавить"
         Height="700"
         Width="600">
-   <Grid>
+   <Grid Background="#7C68AD">
        <Grid.ColumnDefinitions>
            <ColumnDefinition Width="150"></ColumnDefinition>
            <ColumnDefinition></ColumnDefinition>
@@ -21,23 +22,23 @@
        </Grid.RowDefinitions>
        
        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">ФИО</TextBlock>
-       <TextBox Grid.Column="1" Name="TBFio" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Column="1" Background="Transparent" Name="TBFio" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
        
        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Возраст</TextBlock>
-       <TextBox Grid.Row="1" Grid.Column="1" Name="TBAge" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Row="1" Grid.Column="1" Background="Transparent" Name="TBAge" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
        
        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Пол</TextBlock>
-       <ComboBox Grid.Row="2" Grid.Column="1" Name="CBGender" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300">
+       <ComboBox Grid.Row="2" Grid.Column="1" Background="Transparent" Name="CBGender" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300">
            <ComboBoxItem Content="Мужской"></ComboBoxItem>
            <ComboBoxItem Content="Женский"></ComboBoxItem>
        </ComboBox>
        
        <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">Номер телефона</TextBlock>
-       <TextBox Grid.Row="3" Grid.Column="1" Name="TBPhone" Height="10" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Row="3" Grid.Column="1" Background="Transparent" Name="TBPhone" Height="10" HorizontalAlignment="Left" Width="300"/>
        
        <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Spacing="10" Orientation="Horizontal">
-           <Button Grid.Row="4" Name="AddButton" Content="Добавить" Click="AddButton_OnClick"></Button>
-           <Button Grid.Row="4" Grid.Column="1" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick"></Button>
+           <Button Grid.Row="4" Name="AddButton" Content="Добавить" Background="Transparent" Click="AddButton_OnClick"></Button>
+           <Button Grid.Row="4" Grid.Column="1" Name="BackButton" Background="Transparent" Content="Вернуться" Click="BackButton_OnClick"></Button>
        </StackPanel>
        
    </Grid>

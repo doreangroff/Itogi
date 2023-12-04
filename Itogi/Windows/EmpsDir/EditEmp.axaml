@@ -8,9 +8,10 @@
         x:DataType="entites:Employee"
         x:Class="Itogi.Windows.EmpsDir.EditEmp"
         Title="Добавить"
+        WindowStartupLocation="CenterScreen"
         Height="700"
         Width="600">
-   <Grid>
+   <Grid Background="#7C68AD">
        <Grid.ColumnDefinitions>
            <ColumnDefinition Width="150"></ColumnDefinition>
            <ColumnDefinition></ColumnDefinition>
@@ -24,22 +25,22 @@
        </Grid.RowDefinitions>
        
        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">ФИО</TextBlock>
-       <TextBox Grid.Column="1" Name="TBFio" Height="10" Text="{Binding FIO}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Column="1" Name="TBFio" Height="10" Background="Transparent" Text="{Binding FIO}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
        
        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Возраст</TextBlock>
-       <TextBox Grid.Row="1" Grid.Column="1" Name="TBAge" Text="{Binding Age}" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Row="1" Grid.Column="1" Name="TBAge" Background="Transparent" Text="{Binding Age}" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300"/>
        
        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Пол</TextBlock>
        <ComboBox Grid.Row="2" Grid.Column="1" Name="CBGender" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"
-                 DisplayMemberBinding="{Binding GenderName}" x:DataType="entites:Gender" SelectedValueBinding="{Binding GenderName}">
+                 DisplayMemberBinding="{Binding GenderName}" Background="Transparent" x:DataType="entites:Gender" SelectedValueBinding="{Binding GenderName}">
        </ComboBox>
        
        <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">Номер телефона</TextBlock>
-       <TextBox Grid.Row="3" Grid.Column="1" Name="TBPhone" Height="10" Text="{Binding PhoneNumber}" HorizontalAlignment="Left" Width="300"/>
+       <TextBox Grid.Row="3" Grid.Column="1" Name="TBPhone" Height="10" Background="Transparent" Text="{Binding PhoneNumber}" HorizontalAlignment="Left" Width="300"/>
        
        <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Spacing="10" Orientation="Horizontal">
-           <Button Grid.Row="4" Name="AddButton" Content="Редактировать" Click="AddButton_OnClick"></Button>
-           <Button Grid.Row="4" Grid.Column="1" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick"></Button>
+           <Button Grid.Row="4" Name="AddButton" Content="Редактировать" Background="Transparent" Click="AddButton_OnClick"></Button>
+           <Button Grid.Row="4" Grid.Column="1" Name="BackButton" Background="Transparent" Content="Вернуться" Click="BackButton_OnClick"></Button>
        </StackPanel>
        
    </Grid>
