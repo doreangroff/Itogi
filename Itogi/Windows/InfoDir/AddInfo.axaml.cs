@@ -84,7 +84,7 @@ public partial class AddInfo : ConnectionWin
     private void FillEmployees()
     {
         string sql = "select employee_id, fio, age, gender_name, phone_number from employees " +
-                     "join itog.genders g on g.gender_id = employees.gender " +
+                     "join pro1_1.genders g on g.gender_id = employees.gender " +
                      "order by employee_id";
         using (var con = new MySqlConnection(_connectionSB.ConnectionString))
         {

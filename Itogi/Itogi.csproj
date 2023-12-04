@@ -68,5 +68,11 @@
       <None Remove="photos\sboky.png" />
       <None Remove="photos\sboky.jpg" />
       <AvaloniaResource Include="photos\sboky.jpg" />
+      <None Remove="photos\camera.png" />
+      <AvaloniaResource Include="photos\camera.png" />
+      <None Remove="photos\weary.png" />
+      <AvaloniaResource Include="photos\weary.png" />
+      <None Remove="photos\cry.png" />
+      <AvaloniaResource Include="photos\cry.png" />
     </ItemGroup>
 </Project>

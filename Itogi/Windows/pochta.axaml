@@ -8,25 +8,66 @@
         Topmost="True"
         Height="300"
         Width="500">
+    
+    <Window.Styles>
+        <Style Selector="Button.icon">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+    </Window.Styles>
+    
     <Grid>
-        <Grid Background="LightPink">
+        <Grid Background="#7C68AD">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel x:Name="textPanel" Grid.Column="0" VerticalAlignment="Center">
+            <StackPanel x:Name="textPanel" Grid.Column="0">
                 <Border Background="#42AAFF" Margin="5 7 0 0" HorizontalAlignment="Left" CornerRadius="10" Height="30" BorderBrush="Black" BorderThickness="0.6">
                     <TextBlock Name="message" VerticalAlignment="Center" Padding="5 0 0 0 "></TextBlock>
                 </Border>
             </StackPanel>
-
-            <Image x:Name="imagePanel" Grid.Column="1" Stretch="UniformToFill" />
+            <StackPanel x:Name="Panel">
+                
+            </StackPanel>
+            
         </Grid>
 
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
-            <Button Content="Кнопка 1" Click="Button1_Click" />
-            <Button Content="Кнопка 2" Click="Button2_Click" />
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Spacing="7" Orientation="Horizontal" Margin="10">
+            <Button Click="Button1_Click" Name="sunglasses"
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/sunglasses.png"></Image></Button>
+            <Button Click="Button2_Click" 
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/weary.png"></Image></Button>
+            <Button Click="Button_OnClick"
+                    Classes="icon"
+                    HorizontalAlignment="Center" 
+                    Width="50"
+                    Height="50"
+                    Background="Transparent"
+                    Margin="0 0 0 2">
+                <Image Width="50" Height="50" Source="avares://itogi/photos/cry.png"></Image></Button>
         </StackPanel>
     </Grid>
 </Window>

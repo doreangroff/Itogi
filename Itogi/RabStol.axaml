@@ -134,11 +134,32 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button HorizontalAlignment="Left" Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="#7C68AD"
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button HorizontalAlignment="Left" Name="ExitBtn" Classes="icon" CornerRadius="0" Click="ExitBtn_OnClick" Background="#7C68AD"
                     BorderThickness="0 0 1 0 " BorderBrush="Black">
-                <Image Width="25" Height="25" Source="photos/vikl.png"></Image>
-            </Button>
-            <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Right" Name="date"></CalendarDatePicker>
+                    <Image Width="25" Height="25" Source="photos/vikl.png"></Image>
+                </Button>
+                <Button HorizontalAlignment="Left" Name="Cam" Classes="icon" CornerRadius="0" Click="Cam_OnClick" Background="#564b70">
+                    <Image Width="25" Height="25" Source="photos/camera.png"></Image>
+                </Button>
+                <Button HorizontalAlignment="Left" Name="poch" Classes="icon" CornerRadius="0" Background="#7C68AD" Click="Poch_OnClick"
+                        BorderThickness="0 0 1 0 " BorderBrush="Black">
+                    <Image Width="25" Height="25" Source="photos/letter.png"></Image>
+                </Button>  
+                <Button HorizontalAlignment="Left" Name="InfoBtn" Classes="icon" CornerRadius="0" Click="InfoBtn_OnClick" Background="#7C68AD">
+                    <Image Width="25" Height="25" Source="photos/info.png"></Image>
+                </Button>
+                <Button HorizontalAlignment="Left" Name="EmpBtn" Classes="icon" CornerRadius="0" Click="EmpBtn_OnClick" Background="#7C68AD">
+                    <Image Width="25" Height="25" Source="photos/emps.png"></Image>
+                </Button>
+                <Button HorizontalAlignment="Left" Name="depBtn" Classes="icon" CornerRadius="0" Click="DepBtn_OnClick" Background="#7C68AD">
+                    <Image Width="25" Height="25" Source="photos/department.png"></Image>
+                </Button>
+                <Button HorizontalAlignment="Left" Name="postBtn" Classes="icon" CornerRadius="0" Click="PostBtn_OnClick" Background="#7C68AD">
+                    <Image Width="25" Height="25" Source="photos/post.png"></Image>
+                </Button>
+            </StackPanel>
+            <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Right" BorderThickness="0 0 0 0" Background="Transparent" Name="date"></CalendarDatePicker>
         </Grid>
     </Grid>
 

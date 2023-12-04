@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Itogi.Windows;
 using Itogi.Windows.DepartmentsDir;
 using Itogi.Windows.EmpsDir;
@@ -14,39 +15,46 @@ namespace Itogi;
 
 public partial class RabStol : Window
 {
-    dyrachyo dyrachyo = new dyrachyo();
+    dyrachyo dyrachyo = new dyrachyo()
+    {
+        Topmost = true
+    };
     private pochta pochta = new pochta();
     private bool dyrFlag = true;
-    private bool pochtaFlag = true;
+    private bool pochtaFlag = false;
+    private bool infoFlag = false;
+    
     public RabStol()
     {
         InitializeComponent();
         DateTime currentDate = DateTime.Now;
         var calendarDate = this.FindControl<CalendarDatePicker>("date");
         calendarDate.SelectedDate = currentDate;
+        
+        InitDurachyo();
+    }
+
+    private void InitDurachyo()
+    {
+        dyrachyo = new dyrachyo();
         dyrachyo.Show();
         MoveWindow(1411, 0, dyrachyo);
-        dyrachyo.Closing += (sender, args) =>
-        {
-            dyrFlag = false;
-            (sender as Window)?.Hide();
-            args.Cancel = true;
-        };
-        pochta.Closing += (sender, args) =>
-        {
-            pochtaFlag = false;
-            (sender as Window)?.Hide();
-            args.Cancel = true;
-        };
+        
     }
-    
+
+    private void InitPochta()
+    {
+        pochta = new pochta();
+        pochta.Show();
+        MoveWindow(1213, 718, pochta);
+        pochtaFlag = true;
+    }
+
     public void MoveWindow(double x, double y, Window window)
     {
         window.Position = new PixelPoint((int)x, (int)y);
     }
-
     
-
     private void Info_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
         Emp_infoWin info = new Emp_infoWin();
@@ -63,8 +71,7 @@ public partial class RabStol : Window
     {
         DepWin dep = new DepWin();
         dep.ShowDialog(this);
-        Console.WriteLine(pochta.Position.Y);
-        Console.WriteLine(pochta.Position.X);
+        
     }
 
     private void Posts_OnDoubleTapped(object? sender, TappedEventArgs e)
@@ -75,7 +82,7 @@ public partial class RabStol : Window
 
     private void ExitBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        Console.WriteLine(dyrachyo.Position.X);
+        Console.WriteLine(dyrFlag.ToString());
         ExitWindow exit = new ExitWindow();
         exit.ShowDialog(this);
         
@@ -83,9 +90,8 @@ public partial class RabStol : Window
 
     private void MessageBtn_OnDoubleTapped(object? sender, TappedEventArgs e)
     {
-        pochta.Show();
-        MoveWindow(1267, 718, pochta);
-        
+        InitPochta();
+        pochta.Closing += delegate { pochtaFlag = false; Console.WriteLine(pochtaFlag.ToString());};
     }
 
     private void Btn_OnPointerEntered(object? sender, PointerEventArgs e)
@@ -105,5 +111,81 @@ public partial class RabStol : Window
             dyrFlag = true;
         }
         
+    }
+
+    private void Cam_OnClick(object? sender, RoutedEventArgs e)
+    {
+        
+        if (dyrFlag == true)
+        {
+            dyrachyo.Close();
+            dyrFlag = false;
+        }
+        else
+        {
+            InitDurachyo();
+            dyrFlag = true;
+        }
+        ButtonColors(dyrFlag, Cam);
+    }
+
+    private void Poch_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (pochtaFlag == true)
+        {
+            pochta.Close();
+            pochtaFlag = false;
+        }
+        else
+        {
+            InitPochta();
+            pochtaFlag = true;
+        }
+        ButtonColors(pochtaFlag, poch);
+    }
+
+    private void InfoBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Emp_infoWin info = new Emp_infoWin();
+        OpenWindows(infoFlag, info);
+    }
+
+    private void EmpBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void DepBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void PostBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ButtonColors(bool flag, Button button)
+    {
+        if (flag == true)
+        {
+            button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#564b70")); //#564b70
+        }
+        else
+        {
+            button.Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#7C68AD"));
+        }
+    }
+
+    private void OpenWindows(bool flag, Window window)
+    {
+        if (flag == true)
+        {
+            window.Close();
+        }
+        else
+        {
+            window.Show();
+        }
     }
 }

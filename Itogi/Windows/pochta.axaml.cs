@@ -7,6 +7,8 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Platform;
+using Avalonia.Utilities;
 using Brushes = Avalonia.Media.Brushes;
 using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
@@ -17,6 +19,7 @@ public partial class pochta : Window
 {
     private Random rand = new Random();
     private StackPanel stack;
+    private StackPanel panel;
     private Avalonia.Controls.Image image;
     private static string prevText;
     string[] mesMas = { "Ты молодец, у тебя все получится!!!", "Брекшпрекникс"};
@@ -24,8 +27,9 @@ public partial class pochta : Window
     public pochta()
     {
         InitializeComponent();
-        stack = this.FindControl<StackPanel>("Panel");
+        stack = this.FindControl<StackPanel>("textPanel");
         image = this.FindControl<Avalonia.Controls.Image>("imagePanel");
+        panel = this.FindControl<StackPanel>("Panel");
         int m = rand.Next(0, 2);
         Console.WriteLine(m.ToString());
         prevText = $"{mesMas[m]}";
@@ -49,7 +53,7 @@ public partial class pochta : Window
             BorderBrush = Brushes.Black,
             CornerRadius = new CornerRadius(10),
             Background = new SolidColorBrush(Avalonia.Media.Color.Parse("#42AAFF")),
-            Margin = new Thickness(5, 7, 0, 0),
+            Margin = new Thickness(5, 50, 0, 0),
             Height = 30,
             HorizontalAlignment = HorizontalAlignment.Left
             
@@ -77,17 +81,44 @@ public partial class pochta : Window
 
     private void Button1_Click(object? sender, RoutedEventArgs e)
     {
-        SetImage("photos/sunglasses.png");
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/sunglasses.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        
+        panel.Children.Add(image);
     }
 
     private void Button2_Click(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/weary.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        panel.Children.Add(image);
     }
 
-    private void SetImage(string imagePath)
+    private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        image.Source = new Avalonia.Media.Imaging.Bitmap(imagePath);
-        
+        Avalonia.Controls.Image image = new Avalonia.Controls.Image()
+        {
+            Source = new Avalonia.Media.Imaging.Bitmap(AssetLoader.Open(new Uri($"avares://itogi/photos/cry.png"))),
+            Margin = new Thickness(0, 35, 5, 0),
+            Width = 50,
+            Height = 50,
+            VerticalAlignment = VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        panel.Children.Add(image);
     }
 }
