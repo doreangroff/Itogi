@@ -9,7 +9,6 @@ namespace Itogi;
 
 public partial class openWin : Window
 {
-    private RabStol stol = new RabStol();
     private DispatcherTimer timer;
     
     public openWin()
@@ -45,6 +44,7 @@ public partial class openWin : Window
     {
        timer.Stop();
        this.Close();
+        RabStol stol = new RabStol();
        stol.Show();
     }
 }

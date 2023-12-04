@@ -25,7 +25,7 @@ public partial class RabStol : Window
         var calendarDate = this.FindControl<CalendarDatePicker>("date");
         calendarDate.SelectedDate = currentDate;
         dyrachyo.Show();
-        MoveWindow(1418, 0, dyrachyo);
+        MoveWindow(1411, 0, dyrachyo);
         dyrachyo.Closing += (sender, args) =>
         {
             dyrFlag = false;
@@ -92,16 +92,16 @@ public partial class RabStol : Window
     {
         if (dyrFlag == true)
         {
-            dyrachyo.Width = 350;
-            dyrachyo.Height = 350;
-            MoveWindow(1418, 0, dyrachyo);
+            dyrachyo.Width = 300;
+            dyrachyo.Height = 300;
+            MoveWindow(1411, 0, dyrachyo);
         }
         else
         {
             dyrachyo.Show();
-            dyrachyo.Width = 350;
-            dyrachyo.Height = 350;
-            MoveWindow(1418, 0, dyrachyo);
+            dyrachyo.Width = 300;
+            dyrachyo.Height = 300;
+            MoveWindow(1411, 0, dyrachyo);
             dyrFlag = true;
         }
         

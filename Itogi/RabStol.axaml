@@ -25,7 +25,7 @@
 
 
     <Grid RowDefinitions="*, Auto">
-        <Image Source="photos/sboky.jpg" Stretch="Fill"></Image>
+        <Image Source="photos/sboky.jpg" Stretch="Fill" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
         <Grid Grid.Row="0" RowDefinitions="*, *" Margin="200, 0, 200, 0">
             <Grid.Background>
                 <ImageBrush Source="photos/desktop2.jpg" Stretch="Fill" />

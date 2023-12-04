@@ -7,6 +7,8 @@
         xmlns:entites="clr-namespace:Itogi.Entities"
         x:DataType="entites:Emp_info"
         x:Class="Itogi.Windows.InfoDir.EditInfo"
+        WindowStartupLocation="CenterScreen"
+        Background="#7C68AD"
         Title="Редактировать"
         Height="700"
         Width="600">
@@ -26,29 +28,29 @@
        </Grid.RowDefinitions>
        
        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Сотурдник</TextBlock>
-       <ComboBox Grid.Column="1" Name="CBEmp" Height="10" VerticalAlignment="Center" HorizontalAlignment="Left" Width="300" x:CompileBindings="False"
+       <ComboBox Grid.Column="1" Name="CBEmp" Height="10" VerticalAlignment="Center" Background="Transparent" HorizontalAlignment="Left" Width="300" x:CompileBindings="False"
                  DisplayMemberBinding="{Binding FIO}" x:DataType="entites:Employee" SelectedValueBinding="{Binding EmployeeId}"/>
        
        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Должность</TextBlock>
-       <ComboBox Grid.Row="1" Grid.Column="1" Name="CBPost" x:CompileBindings="False" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"
+       <ComboBox Grid.Row="1" Grid.Column="1" Name="CBPost" x:CompileBindings="False" Height="10" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"
                  DisplayMemberBinding="{Binding PostName}" x:DataType="entites:Post" SelectedValueBinding="{Binding PostId}"/>
        
        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Отдел</TextBlock>
-       <ComboBox Grid.Row="2" Grid.Column="1" Name="CBDep" x:CompileBindings="False" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"
+       <ComboBox Grid.Row="2" Grid.Column="1" Name="CBDep" x:CompileBindings="False" Background="Transparent" Height="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300"
                  DisplayMemberBinding="{Binding DepartmentName}" x:DataType="entites:Department" SelectedValueBinding="{Binding DepartmnetId}"/>
        
        <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">Ставка</TextBlock>
-       <TextBox Grid.Row="3" Grid.Column="1" Name="TBRate" Height="10" Text="{Binding WorkingRate}" HorizontalAlignment="Left" Width="100"/>
+       <TextBox Grid.Row="3" Grid.Column="1" Name="TBRate" Height="10" Text="{Binding WorkingRate}" Background="Transparent" HorizontalAlignment="Left" Width="100"/>
        
        <TextBlock Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center">Часы работы</TextBlock>
-       <TextBox Grid.Row="4" Grid.Column="1" Name="TBHours" Height="10" Text="{Binding WorkingHours}" HorizontalAlignment="Left" Width="100"/>
+       <TextBox Grid.Row="4" Grid.Column="1" Name="TBHours" Height="10" Text="{Binding WorkingHours}" Background="Transparent" HorizontalAlignment="Left" Width="100"/>
        
        <TextBlock Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center">Зарплата</TextBlock>
-       <TextBox Grid.Row="5" Grid.Column="1" Name="TBSalary" Height="10" Text="{Binding Salary}" HorizontalAlignment="Left" Width="100"/>
+       <TextBox Grid.Row="5" Grid.Column="1" Name="TBSalary" Height="10" Text="{Binding Salary}" Background="Transparent" HorizontalAlignment="Left" Width="100"/>
        
        <StackPanel HorizontalAlignment="Center" Grid.Row="6" Grid.ColumnSpan="2" Spacing="10" Orientation="Horizontal">
-           <Button Grid.Row="6" Name="EditButton" Content="Редактировать" Click="EditButton_OnClick"></Button>
-           <Button Grid.Row="6" Grid.Column="1" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick"></Button>
+           <Button Grid.Row="6" Name="EditButton" Content="Редактировать" Click="EditButton_OnClick" Background="Transparent"></Button>
+           <Button Grid.Row="6" Grid.Column="1" Name="BackButton" Content="Вернуться" Click="BackButton_OnClick" Background="Transparent"></Button>
        </StackPanel>
        
    </Grid>
